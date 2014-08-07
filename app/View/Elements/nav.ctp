@@ -57,7 +57,7 @@
 			<ul class="nav pull-right">
 				<li class='divider-vertical'></li>
 	          		<?php 
-	          		if ($userId === null)
+	          		if ($userId === null && $facebook_id === null)
 	          		/*	echo '
 						
 						<li class="signinModal">
@@ -75,21 +75,16 @@
 					{
 						echo '
 						<li class="dropdown" id="menu4">
-						<a href="#menu4"
-						class="dropdown-toggle"
-						data-toggle="dropdown">
-						Hello '.$userId.'!
-						<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li>'. $this->Html->link('Dashboard',array('controller' => 'users', 'action' => 'dashboard', 'full_base' => true)).' </li>';
-						if ($facebook_id === null)
-							echo '<li>'. $this->Html->link('Log Out',array('controller' => 'users', 'action' => 'logout', 'full_base' => true)).' </li>
-							</ul>
-							</li>';
-						else
-							echo '<li><a onclick="/users/logout\');" >Log Out</a></li>
-							</ul>
-							</li>';
+                            <a href="#menu4" class="dropdown-toggle" data-toggle="dropdown">Hello, '.$userId.'!<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>'. $this->Html->link('Dashboard',array('controller' => 'users', 'action' => 'dashboard', 'full_base' => true)).' </li>';
+                                if ($facebook_id === null) echo '
+                                    <li>'. $this->Html->link('Log Out',array('controller' => 'users', 'action' => 'logout', 'full_base' => true)).' </li>';
+                                else
+                                    echo '<li>'. $this->Html->link('Log Out',array('controller' => 'users', 'action' => 'logout', 'full_base' => true)).' </li>';
+							echo '
+                            </ul>
+                        </li>';
 					}
 	         		?>
 		   		 </ul>
