@@ -14,6 +14,7 @@
                 background-color:white;
                 color:black;
                 border:1px solid black;
+                text-align:center;
             }
             .include_option{
                 margin-right:20px !important;
@@ -130,10 +131,10 @@
                         attributes = JSON.parse(attributes);
                         for(var i = 0; i < attributes.length; i++){
                             $("#attribute_name").append("<option value='" + attributes[i][1] + "'>" + attributes[i][0] + "</option>");
-                            $("#include_list").append(attributes[i][0] + " <input class='include_option' name='" + attributes[i][0] + "' type='checkbox' value='" + attributes[i][1] + "'>");
-                            if(i != 0 && i%2 == 0){
+                            if(i != 0 && i%4 == 0){
                                 $("#include_list").append("<br>");
                             }
+                            $("#include_list").append(attributes[i][0] + " <input class='include_option' name='" + attributes[i][0] + "' type='checkbox' value='" + attributes[i][1] + "'>");
                         }
                     }
                 });
