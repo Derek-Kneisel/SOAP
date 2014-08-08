@@ -79,13 +79,13 @@
                 <br>
                 <select id="operator">
                     <option value="default" selected="selected">Select a comparison operator</option>
-                    <option value="=">=</option>
+                    <option value="ILIKE">=</option>
                     <option value="ILIKE">contains</option>
                     <option value="<"><</option>
                     <option value=">">></option>
                     <option value="<="><=</option>
                     <option value=">=">>=</option>
-                    <option value="!=">!=</option>
+                    <option value="NOT ILIKE">!=</option>
                 </select>
                 <br>
                 <input id="keyword" type="text" placeholder="Enter the keyword(s) for your search">
@@ -190,8 +190,8 @@
                 }
             });
             $("#submit_condition").click(function(){
-                var condition_string = $("#attribute_name").find(":selected").html() + " " + $("#operator").val() + " \"" + $("#keyword").val() + "\"";
-                if($("#operator").val() == "ILIKE"){
+                var condition_string = $("#attribute_name").find(":selected").html() + " " + $("#operator option:selected").html() + " \"" + $("#keyword").val() + "\"";
+                if($("#operator option:selected").html() == "contains"){
                     $("#keyword").val("%" + $("#keyword").val() + "%");
                 }
                 $("#condition_list").append("<option value='" + $("#attribute_name").find(":selected").val() + " " + $("#operator").val() + " &apos;" + $("#keyword").val() + "&apos;' class='condition_option'>" + condition_string + "</option>");
