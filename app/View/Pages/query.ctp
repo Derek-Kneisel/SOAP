@@ -15,6 +15,9 @@
                 color:black;
                 border:1px solid black;
             }
+            .include_option{
+                margin-right:20px !important;
+            }
             #condition_box{
                 background-image:url('/cabect/SOAP/app/webroot/img/condition.png');
                 background-position:right;
@@ -155,6 +158,9 @@
                             $("#where").append($(this).html() + ", ");
                         });
                     }
+                }
+                else{
+                    alert("You must select a condition in order to delete it.");
                 }
             });
             $("#overlay").click(function(){
