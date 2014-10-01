@@ -5,8 +5,8 @@ class ChemicalsController extends AppController {
     
     public $components = array('RequestHandler');
     
-	public function index() {
-	}
+    public function index() {
+    }
     
     public function view($chem_id) {
         $chem_sql = 'SELECT chemical_name, carcinogenic, clean_air_act, metal, pbt

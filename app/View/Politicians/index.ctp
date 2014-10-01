@@ -18,8 +18,8 @@
                 }
             </style>
             <h2>Explore the NJ state legislature:</h2>
-            <a href="/cabect/SOAP/index.php/senators"><img class="pol_link" src="/cabect/SOAP/app/webroot/img/senate_link.jpg"></a><br>
-            <a href="/cabect/SOAP/index.php/representatives"><img class="pol_link" src="/cabect/SOAP/app/webroot/img/rep_link.jpg"></a>
+            <a href="/SOAP/index.php/senators"><img class="pol_link" src="<?php echo $this->webroot; ?>/img/senate_link.jpg"></a><br>
+            <a href="/SOAP/index.php/representatives"><img class="pol_link" src="<?php echo $this->webroot; ?>/img/rep_link.jpg"></a>
         </div>
     </body>
 </html>

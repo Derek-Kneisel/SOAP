@@ -20,7 +20,7 @@
                 margin-right:20px !important;
             }
             #condition_box{
-                background-image:url('/cabect/SOAP/app/webroot/img/condition.png');
+                background-image:url('/SOAP/app/webroot/img/condition.png');
                 background-position:right;
                 background-repeat:no-repeat;
                 display:none;
@@ -123,7 +123,7 @@
                 $("#where").html("");
                 $.ajax({
                     type: "GET",
-                    url: "/cabect/SOAP/scripts/getAttributes.php",
+                    url: "/SOAP/scripts/getAttributes.php",
                     data: {
                         dataset : $(this).val()
                     },
@@ -242,15 +242,22 @@
                 });
                 $.ajax({
                     type: "GET",
-                    url: "/cabect/SOAP/scripts/query.php",
+                    url: "/SOAP/scripts/query.php",
                     data: {
                         selected_names: selected_names,
                         selected_attributes: selected_attributes,
                         tables: tables,
                         conditions: conditions
                     },
-                    success: function(filename){
-                        window.location.href = "/cabect/SOAP/app/webroot/files/export_" + filename + ".csv";
+                    success: function(timestamp){
+                        window.location = "/SOAP/app/webroot/files/export_" + timestamp + ".csv";
+			$.ajax({
+			    type: "POST",
+			    url: "/SOAP/scripts/delete_csv.php",
+			    data: {
+			        timestamp: timestamp	
+			    }
+			});
                     }
                 })
             });

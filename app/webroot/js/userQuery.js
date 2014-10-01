@@ -1,5 +1,3 @@
-
-/*sets all of the click and keyup events for the facility/chemical pages*/
 function bindEvents(modelName, orderBy){
     filterSearch(0, modelName, orderBy, 0, 25);
     
@@ -51,7 +49,6 @@ function bindEvents(modelName, orderBy){
     });
 }
 
-/*sets up all of the click and keyup events for the politicians page*/
 function bindEventsPoliticians(modelName, orderBy){
     filterSearchPoliticians(0, modelName, orderBy, 0, 30);
     
@@ -103,7 +100,6 @@ function bindEventsPoliticians(modelName, orderBy){
     });
 }
 
-/*displays results according to the user-inputted filters for facilities and chemicals*/
 function filterSearch(event, modelName, orderBy, offsetNum, limit){
     if(event.keyCode != 37 && event.keyCode != 38 && event.keyCode != 39 && event.keyCode != 40){
         var filters = [];
@@ -114,7 +110,7 @@ function filterSearch(event, modelName, orderBy, offsetNum, limit){
         });
         $.ajax({
             type: "POST",
-            url: "/cabect/SOAP/index.php/" + modelName + "/loadTable",
+            url: "/SOAP/index.php/" + modelName + "/loadTable",
             data: {
                 limit: limit,
                 order: orderBy,
@@ -143,7 +139,7 @@ function filterSearch(event, modelName, orderBy, offsetNum, limit){
                     $("#totalResults").html("(" + count + " results)");
                     data = data[1];
                     for(var i = 0; i < data.length; i++){
-                        var tableRow = "<tr><td class='span3' style='width:auto;'><a href='http://tardis.tcnj.edu/cabect/SOAP/index.php/" + modelName + "/view/" + data[i][0][Object.keys(data[0][0])[0]] + "'>" + data[i][0][Object.keys(data[0][0])[1]] + "</a></td>";
+                        var tableRow = "<tr><td class='span3' style='width:auto;'><a href='" + modelName + "/view/" + data[i][0][Object.keys(data[0][0])[0]] + "'>" + data[i][0][Object.keys(data[0][0])[1]] + "</a></td>";
                         for(var j = 2; j < Object.keys(data[0][0]).length; j++){
                             tableRow += "<td class='span3' style='width:auto;'>" + data[i][0][Object.keys(data[0][0])[j]] + "</td>";
                         }
@@ -168,7 +164,6 @@ function filterSearch(event, modelName, orderBy, offsetNum, limit){
     }
 }
 
-/*displays results according to the user-inputted filters for politicians*/
 function filterSearchPoliticians(event, modelName, orderBy, offsetNum, limit){
     if(event.keyCode != 37 && event.keyCode != 38 && event.keyCode != 39 && event.keyCode != 40){
         var filters = [];
@@ -179,7 +174,7 @@ function filterSearchPoliticians(event, modelName, orderBy, offsetNum, limit){
         });
         $.ajax({
             type: "POST",
-            url: "/cabect/SOAP/index.php/" + modelName + "/loadTable",
+            url: "/SOAP/index.php/" + modelName + "/loadTable",
             data: {
                 limit: limit,
                 order: orderBy,

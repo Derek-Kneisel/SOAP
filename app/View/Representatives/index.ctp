@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php $this->Html->script('jquery'); ?>
-        <script type="text/javascript" src="/cabect/SOAP/app/webroot/js/userQuery.js"></script>
+        <script type="text/javascript" src="<?php echo $this->webroot; ?>/js/userQuery.js"></script>
     </head>
     <body>
         <div class="span2">
@@ -56,14 +56,14 @@
         </div>
         <div class="span1">
             <div style="position:fixed;">
-                <a href='http://www.njleg.state.nj.us/SelectMun.asp' target='_blank'><img id="email" style="width:120px; height:80px;" src='/cabect/SOAP/app/webroot/img/email.png'></a>
+                <a href='http://www.njleg.state.nj.us/SelectMun.asp' target='_blank'><img id="email" style="width:120px; height:80px;" src='<?php echo $this->webroot; ?>/img/email.png'></a>
             </div>
             <script>
                 $("#email").mouseover(function(){
-                    $(this).attr("src", "/cabect/SOAP/app/webroot/img/email_open.png");
+                    $(this).attr("src", "<?php echo $this->webroot; ?>/img/email_open.png");
                 });
                 $("#email").mouseout(function(){
-                    $(this).attr("src", "/cabect/SOAP/app/webroot/img/email.png");
+                    $(this).attr("src", "<?php echo $this->webroot; ?>/img/email.png");
                 });
             </script>
         </div>

@@ -22,9 +22,6 @@
     display:inline-block;
     width:80%;
     padding-left:18px; 
-    background: white no-repeat scroll left center url('/cabect/SOAP/app/webroot/img/icon_search.png');
-}
-.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe[style]{
-    width:600px !important;
+    background: white no-repeat scroll left center url('/SOAP/app/webroot/img/icon_search.png');
 }
 

@@ -40,7 +40,7 @@
         <h1>Facilities that contain this chemical:</h1>
         <hr />
         <?php foreach ($facility_info as $facility): ?>
-            <h3><a class="pageLink" href='http://tardis.tcnj.edu/cabect/SOAP/index.php/facilities/view/<?php echo $facility[0]['facility_id']; ?>'><?php echo $facility[0]['facility_name']; ?></a></h3>
+            <h3><a class="pageLink" href='/../SOAP/index.php/facilities/view/<?php echo $facility[0]['facility_id']; ?>'><?php echo $facility[0]['facility_name']; ?></a></h3>
         <?php endforeach; ?>
     </div>
     <br>

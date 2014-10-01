@@ -62,7 +62,7 @@
         <h1>Chemicals found on-site:</h1>
         <hr />
         <?php foreach ($chem_info as $chem): ?>
-            <h3><a class="pageLink" href='http://tardis.tcnj.edu/cabect/SOAP/index.php/chemicals/view/<?php echo $chem[0]['chemical_id']; ?>'><?php echo $chem[0]['chemical_name']; ?></a></h3>
+            <h3><a class="pageLink" href='/../SOAP/index.php/chemicals/view/<?php echo $chem[0]['chemical_id']; ?>'><?php echo $chem[0]['chemical_name']; ?></a></h3>
             <h4>Total Amount: <?php echo $chem[0]['total_amount']; ?></h4>
             <h4>Fugitive Air Amount: <?php echo $chem[0]['fugair_amount']; ?></h4>
             <h4>Water Amount: <?php echo $chem[0]['water_amount']; ?></h4>
